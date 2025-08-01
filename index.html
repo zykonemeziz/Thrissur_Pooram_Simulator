@@ -1,16 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THRISSUR POORAM SIMULATOR</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Acme&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  Hello world
-  <script src="script.js"></script>
+  <video autoplay muted loop id="bg-video">
+    <source src="vid.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <h1> THRISSUR POORAM SIMULATOR </h1>
+  <div class="audio-controls">
+    <div class="row">
+      <div class="audio-block">
+        <label>🌩️ Thunder</label>
+        <input type="range" min="0" max="1" step="0.01" value="0.5" onchange="setVolume('thunder', this.value)">
+        <div class="buttons">
+          <button class="toggle-btn" onclick="toggleAudio(this, 'thunder')">▷</button>
+        </div>
+      </div>
+      <div class="audio-block">
+        <label>🌧️ Rain</label>
+        <input type="range" min="0" max="1" step="0.01" value="0.5" onchange="setVolume('rain', this.value)">
+        <div class="buttons">
+          <button class="toggle-btn" onclick="toggleAudio(this, 'rain')">▷</button>
+        </div>
+      </div>
+      <div class="audio-block">
+        <label>🥁 Panchavadyam</label>
+        <input type="range" min="0" max="1" step="0.01" value="0.5" onchange="setVolume('Panchavadyam', this.value)">
+        <div class="buttons">
+          <button class="toggle-btn" onclick="toggleAudio(this, 'Panchavadyam')">▷</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="audio-block">
+        <label>👥 Crowd</label>
+        <input type="range" min="0" max="1" step="0.01" value="0.5" onchange="setVolume('crowd', this.value)">
+        <div class="buttons">
+          <button class="toggle-btn" onclick="toggleAudio(this, 'crowd')">▷</button>
+        </div>
+      </div>
+      <div class="audio-block">
+        <label>💥 Vedikettu</label>
+        <input type="range" min="0" max="1" step="0.01" value="0.5" onchange="setVolume('vedikettu', this.value)">
+        <div class="buttons">
+          <button class="toggle-btn" onclick="toggleAudio(this, 'vedikettu')">▷</button>
+        </div>
+      </div>
+      <div class="audio-block">
+        <label>🎶 Ilanjitharamelam</label>
+        <input type="range" min="0" max="1" step="0.01" value="0.5" onchange="setVolume('ilanjitharamelam', this.value)">
+        <div class="buttons">
+          <button class="toggle-btn" onclick="toggleAudio(this, 'ilanjitharamelam')">▷</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio Elements -->
+  <audio id="thunder" src="thunder.mp3" loop></audio>
+  <audio id="rain" src="rain.mp3" loop></audio>
+  <audio id="Panchavadyam" src="Panchavadyam.mp3" loop></audio>
+  <audio id="crowd" src="crowd.mp3" loop></audio>
+  <audio id="vedikettu" src="vedikettu.mp3" loop></audio>
+  <audio id="ilanjitharamelam" src="ilanjitharamelam.mp3" loop></audio>
+
+  <script>
+    function toggleAudio(btn, audioId) {
+      const audio = document.getElementById(audioId);
+      if (audio.paused) {
+        audio.play();
+        btn.textContent = '||';
+      } else {
+        audio.pause();
+        btn.textContent = '▷';
+      }
+    }
+
+    function setVolume(id, value) {
+      const audio = document.getElementById(id);
+      audio.volume = value;
+    }
+  </script>
 </body>
 
 </html>
