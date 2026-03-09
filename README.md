@@ -9,8 +9,8 @@
 
 
 ### Team Members
-- Member 1: Amruth Krishna K - Jyothi Engineering College
-- Member 2: Sidharth Sajith - Jyothi Engineering College
+- Member 1: Sidharth Sajith - Jyothi Engineering College
+- Member 2: Amruth Krishna K - Jyothi Engineering College
 
 ### Project Description
 Ever felt the urge to hear Pooram melam at 3AM in your room?
